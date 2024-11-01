@@ -1,0 +1,40 @@
+{
+  "name": "repair-guide",
+  "main": "src/app.ts",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@nativescript/core": "~8.8.0",
+    "@reduxjs/toolkit": "^2.2.1",
+    "@supabase/supabase-js": "^2.39.7",
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "html-entities": "^2.4.0",
+    "react": "^18.2.0",
+    "react-nativescript": "^5.0.0",
+    "react-nativescript-navigation": "^5.0.0",
+    "react-redux": "^8.1.3",
+    "redux-persist": "^6.0.0"
+  },
+  "devDependencies": {
+    "@nativescript/android": "8.8.0",
+    "@nativescript/ios": "8.8.0",
+    "@nativescript/preview-cli": "^1.0.13",
+    "@nativescript/stackblitz": "0.0.8",
+    "@nativescript/tailwind": "^2.1.0",
+    "@nativescript/types-minimal": "~8.8.0",
+    "@nativescript/webpack": "~5.0.8",
+    "@types/react": "^18.0.17",
+    "tailwindcss": "~3.4.0",
+    "typescript": "~5.4.0"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "android": "ns run android",
+    "ios": "ns run ios",
+    "preview": "ns preview",
+    "build:android": "ns build android --release --key-store-path ./keystore/repair-guide.keystore --key-store-password YOUR_KEYSTORE_PASSWORD --key-store-alias repair_guide --key-store-alias-password YOUR_ALIAS_PASSWORD",
+    "build:ios": "ns build ios --release --for-device",
+    "clean": "ns clean"
+  }
+}

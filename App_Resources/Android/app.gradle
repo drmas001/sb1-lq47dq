@@ -1,0 +1,29 @@
+android {
+  defaultConfig {
+    minSdkVersion 21
+    targetSdkVersion 33
+    compileSdkVersion 33
+    generatedDensities = []
+  }
+
+  aaptOptions {
+    additionalParameters "--no-version-vectors"
+  }
+
+  signingConfigs {
+    release {
+      storeFile file("../keystore/repair-guide.keystore")
+      storePassword System.getenv("KEYSTORE_PASSWORD") ?: "repair_guide_password"
+      keyAlias System.getenv("KEY_ALIAS") ?: "repair_guide"
+      keyPassword System.getenv("KEY_PASSWORD") ?: "repair_guide_password"
+    }
+  }
+
+  buildTypes {
+    release {
+      signingConfig signingConfigs.release
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
